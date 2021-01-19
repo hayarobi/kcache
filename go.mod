@@ -7,6 +7,7 @@ require (
 	github.com/boz/go-logutil v0.1.0
 	github.com/cheekybits/genny v1.0.0
 	github.com/pkg/errors v0.0.0-20170505043639-c605e284fe17
+	github.com/sirupsen/logrus v1.4.1
 	github.com/stretchr/testify v1.3.0
 	golang.org/x/time v0.0.0-20180412165947-fbb02b2291d2 // indirect
 	golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e

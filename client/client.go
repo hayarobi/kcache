@@ -3,6 +3,7 @@ package client
 import (
 	"context"
 	"fmt"
+	"github.com/sirupsen/logrus"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -67,6 +68,7 @@ func ForResource(
 func makeResourceListFn(
 	c restRequester, res string, ns string) ListFn {
 	return func(ctx context.Context, opts metav1.ListOptions) (runtime.Object, error) {
+		logrus.WithFields(logrus.Fields{"namespace":ns,"context":ctx}).Debug("calling resource list api")
 		result := c.Get().
 			Context(ctx).
 			Namespace(ns).
